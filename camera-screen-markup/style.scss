@@ -1,9 +1,87 @@
 // base @import
-// @use "./base.scss";
-@import url(base.css);
+// !cyntax error
+// @import "base.scss";
+@import './base.scss';
 
 // style
 #root{
   @extend %view-100;
-  border: base.$border-red;
+  background-color: $color-c4;
+  color: $color-c4;
+  #con{
+    @extend %inherit;
+    @include flex-align-justify(center, space-between);
+    @extend %flex-column;
+    &>div{
+      @include width-height(90%, $per100);
+      @include flex-align-justify(center, space-between);
+      @extend %flex-column;
+      @include tablet{
+        flex-direction: row;
+      }
+      &>div{
+        @include width-height($per100, 10%);
+        @include flex-align-justify(center, flex-start);
+        @include tablet{
+          @include width-height(10%,  $per100);
+          @include flex-align-justify(flex-end, center);
+        }
+        svg{
+          @include width-height(15vw, 15vw);
+          color: $color-dg;
+          @include max(80px, 80px);
+          position: relative;
+          top: 5vw;
+          @include tablet{
+            @include max(50px, 50px);
+            top: -5vh;
+          }
+        }
+      }
+      &>div:nth-child(2){
+        @include flex-align-justify(center, space-between);
+        @include tablet{
+          @include width-height(10%, $per100);
+          @include flex-align-justify(center, space-between);
+          // !@extend 속성은 @mixin 적용하는 @include에서 쓰면 안된다
+          // !Compilation Error
+          // Error: You may not @extend an outer selector from within @media.
+          // You may only @extend selectors within the same directive.
+          // @extend %flex-column;
+          flex-direction: column;
+        }
+        &>div{
+          @include width-height(15vw, 15vw);
+          @include max(80px, 80px);
+          background-color: #fff;
+          @extend %flex-center-center;
+          @include tablet{
+            @include max(60px, 60px);
+            position: relative;
+            bottom: 2vw;
+            // border: $border-bk;
+
+          }
+        }
+        &>div:nth-child(1){
+          order: 2;
+          position: relative;
+          bottom: 5vw;
+          @include tablet{
+            bottom: 4vw;
+          }
+        }
+        &>div:nth-child(2){
+          order: 1;
+          @extend %circle;
+          background-color: $color-dg;
+          position: relative;
+          bottom: 5vw;
+          @include tablet{
+            top: 5vw;
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,2 +1,204 @@
-@use "./base.scss";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root #con > div > div:nth-child(2) > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root #con, #root #con > div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root #con {
+  width: inherit;
+  height: inherit;
+}
+
+#root #con > div > div:nth-child(2) > div:nth-child(2) {
+  border-radius: 100%;
+}
+
+#root {
+  background-color: #c4c4c4;
+  color: #c4c4c4;
+}
+
+#root #con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#root #con > div {
+  width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+  #root #con > div {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#root #con > div > div {
+  width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div {
+    width: 10%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#root #con > div > div svg {
+  width: 15vw;
+  height: 15vw;
+  color: dimgray;
+  max-width: 80px;
+  max-height: 80px;
+  position: relative;
+  top: 5vw;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div svg {
+    max-width: 50px;
+    max-height: 50px;
+    top: -5vh;
+  }
+}
+
+#root #con > div > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div:nth-child(2) {
+    width: 10%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#root #con > div > div:nth-child(2) > div {
+  width: 15vw;
+  height: 15vw;
+  max-width: 80px;
+  max-height: 80px;
+  background-color: #fff;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div:nth-child(2) > div {
+    max-width: 60px;
+    max-height: 60px;
+    position: relative;
+    bottom: 2vw;
+  }
+}
+
+#root #con > div > div:nth-child(2) > div:nth-child(1) {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  position: relative;
+  bottom: 5vw;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div:nth-child(2) > div:nth-child(1) {
+    bottom: 4vw;
+  }
+}
+
+#root #con > div > div:nth-child(2) > div:nth-child(2) {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  background-color: dimgray;
+  position: relative;
+  bottom: 5vw;
+}
+
+@media (min-width: 600px) {
+  #root #con > div > div:nth-child(2) > div:nth-child(2) {
+    top: 5vw;
+  }
+}
 /*# sourceMappingURL=style.css.map */
