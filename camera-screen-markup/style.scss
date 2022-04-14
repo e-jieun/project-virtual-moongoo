@@ -1,0 +1,9 @@
+// base @import
+// @use "./base.scss";
+@import url(base.css);
+
+// style
+#root{
+  @extend %view-100;
+  border: base.$border-red;
+}
