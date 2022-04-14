@@ -1,58 +1,6 @@
-// // @import = @use
-// @use "css/base";
-// variable & class set
-// variable
-$color-c4: #c4c4c4;
-$color-d6: #d6d6d6;
-$color-dg: dimgray;
-$color-gr: gray;
-$per-100: 100%;
-// class set
-@mixin flex-align-justify($align, $justify) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-}
-@mixin width-height($width, $height){
-  width: $width;
-  height: $height;  
-}
-%flex-center-center{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-%view-100{
-  width: 100vw;
-  height: 100vh;
-}
-%per-100{
-  width: $per-100;
-  height: $per-100;
-}
-%inherit{
-  width: inherit;
-  height: inherit;
-}
-%border-bk{
-  border: 1px solid #000;
-}
-%border-red{
-  border: 1px solid red;
-}
-%flex-column{
-  flex-direction: column;
-}
-%circle{
-  border-radius: $per-100;
-}
-
-
+// @import = @use
+@import './base.scss';
 // style
-*{
-  margin: 0;
-  padding: 0;
-}
 #root{
   @include width-height(200vw, 100vh);
   #con{
