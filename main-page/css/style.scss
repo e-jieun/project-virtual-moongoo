@@ -1,0 +1,172 @@
+// @import base.scss
+@import './base.scss';
+
+// style
+#root{
+  @include width-height(100vw, 300vh);
+  #con{
+    @extend %inherit;
+    // @extend %flex-center-center;
+    @include flex-align-justify(center, space-between);
+    @extend %flex-column;
+    &>div{
+      width: inherit;
+    }
+    // search con
+    &>div:nth-child(1){
+      flex-grow: 4;
+      @include flex-align-justify(center, center);
+      @extend %flex-column;
+      &>div:nth-child(1){
+        @include width-height(30vw,30vw);
+        position: relative;
+        top: 6vw;
+        &>svg{
+          @include width-height(30vw,30vw);
+        }
+      }
+      &>div:nth-child(2){
+        @include width-height(60vw, 12vw);
+        background-color: $color-note;
+        margin: 5vw;
+        box-shadow: inset 5px 5px 10px rgba($color: $color-c4, $alpha: .5);
+      }
+      &>div:nth-child(3){
+        @include width-height(30vw, 10vw);
+        background-color: $color-coal;
+        @extend %flex-center-center;
+        box-shadow: 5px 5px 10px rgba($color: $color-c4, $alpha: 1);
+      }
+    }
+    // main con
+    &>div:nth-child(2){
+      flex-grow: 10;
+      @include flex-align-justify(center, space-between);
+      @extend %flex-column;
+      column-gap: 2vw;
+      &>div:nth-child(2),&>div:nth-child(3),&>div:nth-child(4){
+        width: inherit;
+        flex-grow: 15;
+        @extend %flex-center-center;
+        @extend %flex-column;
+        &>div:nth-child(1){
+          flex-grow: 1;
+          width: 30%;
+          @extend %flex-center-center;
+          position: relative;
+          left: -30vw;
+          &>div{
+            color: $color-hp;
+            font-weight: 600;
+          }
+        }
+        &>div:nth-child(2){
+          width: inherit;
+          flex-grow: 3;
+          @include flex-align-justify(center, space-between);
+          &>div{
+            flex-grow: 1;
+            height: 80%;
+            @include border(4px, #fff);
+            transform: skewY(-25deg);
+            background-color: $color-c4;
+          }
+          &>div:nth-child(2){
+            position: relative;
+            top: -25vw;
+          }
+          &>div:nth-child(3){
+            position: relative;
+            top: -25vw;
+          }
+        }
+      }
+      // contents con
+      // ?이렇게 해결하기보다 대칭으로 해결해보는 것이 더 나을 것 같음
+      &>div:nth-child(3){
+        width: inherit;
+        flex-grow: 15;
+        @extend %flex-center-center;
+        @extend %flex-column;
+        &>div:nth-child(1){
+          flex-grow: 1;
+          width: 30%;
+          @extend %flex-center-center;
+          position: relative;
+          left: 30vw;
+          &>div{
+            color: $color-hp;
+            font-weight: 600;
+          }
+        }
+        &>div:nth-child(2){
+          width: inherit;
+          flex-grow: 3;
+          @include flex-align-justify(center, space-between);
+          &>div{
+            flex-grow: 1;
+            height: 80%;
+            transform: skewY(25deg);
+            background-color: $color-c4;
+          }
+          &>div:nth-child(1){
+            position: relative;
+            top: -35vw;
+          }
+          &>div:nth-child(2){
+            position: relative;
+            top: -10vw;
+          }
+          &>div:nth-child(3){
+            position: relative;
+            top: -10vw;
+          }
+        }
+      }
+      &>div:nth-child(1){
+        flex-grow: 1;
+        @extend %flex-center-center;
+        position: static;
+        &>div:nth-child(1){
+          &>div:nth-child(2){
+            position: relative;
+            bottom: 6.5vh;
+            left: 4vh;
+            font-size: 0.8rem;
+          }
+        }
+        &>div:nth-child(2){
+          height: 60%;
+          @include flex-align-justify(flex-end, center);
+          position: relative;
+          right: 3vw;
+          top: -1vw;
+        }
+      }
+    }
+    // more con
+    &>div:nth-child(3){
+      flex-grow: 1;
+      @include flex-align-justify(center, center);
+      &>div:nth-child(1){
+        text-align: center;
+        position: relative;
+        top: 5vh;
+        &>div{
+          color: $color-hp;
+        }
+        &>svg{
+          color: $color-coal;
+        }
+      }
+      &>div:nth-child(2){
+        @include width-height(25vw, inherit);
+        @extend %flex-center-center;
+        @extend %flex-column;
+        position: fixed;
+        bottom: 2vh;
+        right: 0;
+      }
+    }
+  }
+}
