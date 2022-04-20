@@ -3,12 +3,7 @@
 
 // style
 #root{
-  @include width-height(100vw, 300vh);
   #con{
-    @extend %inherit;
-    // @extend %flex-center-center;
-    @include flex-align-justify(center, space-between);
-    @extend %flex-column;
     &>div{
       width: inherit;
     }
@@ -38,23 +33,52 @@
         box-shadow: 5px 5px 10px rgba($color: $color-c4, $alpha: 1);
       }
     }
+
     // main con
     &>div:nth-child(2){
-      flex-grow: 10;
+      flex-grow: 10;      
       @include flex-align-justify(center, space-between);
       @extend %flex-column;
       column-gap: 2vw;
+      // 이건 어때요? con
+      &>div:nth-child(1){
+        position: relative;
+        bottom: 10vh;
+        height: 25px;
+        @include flex-align-justify(center, center);
+        // 메모지모양 con
+        &>div:nth-child(1){
+          &>div{
+
+            position: relative;
+            left: -1vw;
+          }
+        }
+        // arrow bottom con
+        &>div:nth-child(2){
+          @include flex-align-justify(flex-start, center);
+          &>svg{
+            @include width-height(30px, 30px);
+            position: relative;
+            bottom: 9vh;
+          }
+        }
+      }
+      
       &>div:nth-child(2),&>div:nth-child(3),&>div:nth-child(4){
         width: inherit;
-        flex-grow: 15;
+        flex-grow: 1;
         @extend %flex-center-center;
         @extend %flex-column;
+        // text con
         &>div:nth-child(1){
           flex-grow: 1;
           width: 30%;
           @extend %flex-center-center;
           position: relative;
           left: -30vw;
+          bottom: 2vh;
+          // text icon
           &>div{
             color: $color-hp;
             font-weight: 600;
@@ -85,43 +109,51 @@
       // ?이렇게 해결하기보다 대칭으로 해결해보는 것이 더 나을 것 같음
       &>div:nth-child(3){
         width: inherit;
-        flex-grow: 15;
+        flex-grow: 1;
         @extend %flex-center-center;
         @extend %flex-column;
+        position: relative;
+        top: 5vh;
+        // text con
         &>div:nth-child(1){
           flex-grow: 1;
           width: 30%;
-          @extend %flex-center-center;
           position: relative;
-          left: 30vw;
+          @include flex-align-justify(center, space-between);
+          left: 15vh;
+          bottom: 2vh;
+          // text item
           &>div{
             color: $color-hp;
             font-weight: 600;
           }
         }
+        // contents 2
+        // ?대칭을 줘서 해결이 될까?
+        // transform: scalex(-1);
+        // con 태그에 적용해주면 됨
         &>div:nth-child(2){
-          width: inherit;
-          flex-grow: 3;
-          @include flex-align-justify(center, space-between);
+          transform: scaleX(-1);
           &>div{
             flex-grow: 1;
             height: 80%;
-            transform: skewY(25deg);
+            // !이 부분을 안 쓰고 대칭을 줘서 해결함
+            // transform: skewY(25deg);
             background-color: $color-c4;
+            position: relative;
+            top: 5vh;
           }
           &>div:nth-child(1){
-            position: relative;
-            top: -35vw;
+            top: 5vh;
           }
           &>div:nth-child(2){
-            position: relative;
-            top: -10vw;
-          }
-          &>div:nth-child(3){
-            position: relative;
-            top: -10vw;
+            top: 5vh;
           }
         }
+      }
+      &>div:nth-child(4){
+        position: relative;
+        top: 15vh;
       }
       &>div:nth-child(1){
         flex-grow: 1;
@@ -160,12 +192,15 @@
         }
       }
       &>div:nth-child(2){
-        @include width-height(25vw, inherit);
+        @include width-height(30px, 30px);
         @extend %flex-center-center;
         @extend %flex-column;
         position: fixed;
         bottom: 2vh;
-        right: 0;
+        right: 2vh;
+        background-color: #fff;
+        @extend %circle;
+        overflow: hidden;
       }
     }
   }
