@@ -4,26 +4,124 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <title>Document</title>
+  <style>
+    :root{
+      --color-pk: #FDC6DF;
+      --color-41: #414141;
+    }
+    .flex-center-spacebetween{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    #con>div:nth-child(2)>div{
+      width: 70px;
+      height: 70px;
+      border: 1px solid var(--color-41);
+    }
+    #con>div:nth-child(2)>div:nth-child(1){
+      background-color: #fff;
+      border-radius: 10%;
+    }
+    #con>div:nth-child(2)>div:nth-child(2){
+      background-color: var(--color-pk);
+      border-radius: 50%;
+    }
+  </style>
 </head>
 <body>
   <div id="root">
-    <div id="con">
-      <div>
+    <div>
+      <div id="con" class="flex-center-spacebetween">
         <!-- default screen con -->
         <div>
           <?xml version="1.0" encoding="UTF-8"?><svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.7 377.69"><defs><style>.b{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:3px;}</style></defs><rect class="b" x="1.5" y="1.5" width="337.7" height="374.69"/><g><line class="b" x1="52.5" y1="150.5" x2="287.68" y2="150.5"/><line class="b" x1="52.3" y1="58.53" x2="287.48" y2="58.53"/><line class="b" x1="52.3" y1="104.53" x2="287.48" y2="104.53"/></g><g><polyline class="b" points="266.99 341.39 268.59 303.32 306.8 300.16"/><line class="b" x1="339.45" y1="376.51" x2="268.59" y2="303.32"/></g><g><line class="b" x1="52.47" y1="286.18" x2="287.65" y2="286.18"/><line class="b" x1="52.27" y1="194.21" x2="287.45" y2="194.21"/><line class="b" x1="52.27" y1="240.21" x2="287.45" y2="240.21"/></g></svg>
         </div>
         <!-- camera function con -->
-        <div>
+        <div class="flex-center-spacebetween">
           <!-- gallery item -->
-          <div><div>gallery</div></div>
+          <div>
+            <img src="" alt="">
+          </div>
           <!-- shutter item -->
-          <div><div>shutter</div></div>
+          <div id="shutter-con">
+            <div id="shutter"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    // variable declaration
+    let colorC4 = '#c4c4c4';
+    let color41 = '#414141';
+    let vw = 'vw';
+    let vh = 'vh';
+    let center = 'center';
+
+    // body style
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+    document.body.style.backgroundColor = colorC4;
+    console.log(document.body.style);
+
+    // get #root
+    const root = document.getElementById('root');
+    console.log(root);
+    // #root style
+    root.style.width = 100+vw;
+    root.style.height = 100+vh;
+    root.style.display = 'flex';
+    root.style.alignItems = center;
+    root.style.justifyContent = center;
+
+    // get #con
+    const con = document.getElementById('con');
+    console.log(con);
+
+    // #con style
+    con.style.width = 90+vw;
+    con.style.height = 90+vh;
+    con.style.flexDirection = 'column';
+
+    // #con>div
+    const conChild = document.getElementById('con').children;
+    // #con>div
+    conChild[0].style.width = 'inherit';
+    conChild[0].style.height = 15+vh;
+    conChild[1].style.width = 'inherit';
+    conChild[1].style.height = 15+vh;    
+
+    // <svg>
+    let svg = document.querySelector('svg');
+    console.log(svg);
+    console.log(svg.style);
+    // svg style
+    svg.style.width = '50px';
+    svg.style.background = '#fff';
+
+    // get #shutter-con
+    const shutterCon = document.getElementById('shutter-con');
+    console.log(shutterCon);
+    // #shutter style
+    shutterCon.style.display = 'flex';
+    shutterCon.style.alignItems = center;
+    shutterCon.style.justifyContent = center;
+
+    // get #shutter
+    const shutter = document.getElementById('shutter');
+    console.log(shutter);
+    console.log(shutter.style);
+    // #shutter의 크기
+    shutter.style.width = '50px';
+    shutter.style.height = '50px';
+    shutter.style.borderRadius = '50%';
+    // 누르면 셔터가 눌리는 인터랙션 만들기
+    shutter.addEventListener('mousedown', function(){
+      shutter.style.background = color41;
+    });
+  </script>
 </body>
 </html>
