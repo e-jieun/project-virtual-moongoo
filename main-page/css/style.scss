@@ -1,0 +1,193 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+#root{
+  width: 100vw;
+  height: 200vh;
+  #con{
+    width: inherit;
+    height: inherit;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 5fr 5fr 2fr;
+    #item-con1{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 5vw;
+      &>div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      &>div:nth-child(2)>input{
+        width: 40vh;
+        height: 10vh;
+        border: none;
+        background-color: #fff;
+        border-radius: 50px;
+        box-shadow: inset 1px 1px 10px rgba($color: #c4c4c4, $alpha: 0.8);
+      }
+      &>div:nth-child(2)>div{
+        width: 0vh;
+        background-color: #fff;
+        height: 0vh;
+        position: relative;
+        right: 5vh;
+        top: -0.5vh;
+        width: 0px;
+        height: 0px;
+        border-bottom: 30px solid #f2f2f2;
+        border-left: 25px solid transparent;
+        border-right: 0px solid transparent;
+      }
+      &>div:nth-child(3){
+        width: 15vh;
+        height: 8vh;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>div{
+          width: 90%;
+          height: 80%;
+          border: 1px solid #414141;
+          background-color: #fdc6df;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &>div{
+            background: none;
+            letter-spacing: 5px;
+          }
+        }
+      }
+      #more{
+        position: absolute;
+        bottom: 5vh;
+      }
+    }
+    #promotion-con{
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      row-gap: 10vh;
+      .main-con{
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: none;
+        
+
+        // 스티커 인터랙션 부분
+        &>div:nth-child(1){
+          position: absolute;
+          z-index: 3;
+          background-color: unset;
+
+          &>div:nth-child(1){
+            background-color: unset;
+            svg{
+            background-color: unset;
+            position: relative;
+            left: -12vh;
+            top: 5vh;
+            }
+          }
+          &>div:nth-child(2){
+            background-color: unset;
+            svg{
+            background-color: unset;
+            position: relative;
+            left: 15vh;
+            top: -7vh;
+            }
+          }
+          &>div:nth-child(3){
+            background-color: unset;
+            svg{
+            background-color: unset;
+            position: relative;
+            left: 12vh;
+            top: -2vh;
+            }
+            &>div{
+              height: 4vh;
+              background-color:  #414141;
+              position: relative;
+              left: 12vh;
+              top: -8vh;
+              border-radius: 50%;
+              transform: rotate(-35deg);
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              display: none;
+              &>div{
+                background-color: unset;
+                color: #f2f2f2;
+                letter-spacing: 0.2vh;
+              }
+            }
+          }
+        }
+        &>div:nth-child(2){
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          position: absolute;
+          &>div:nth-child(1){
+            width: 50vw;
+            height: 50vw;
+            background-color: #fff;
+          } 
+          // 이름표 모양 con
+          &>div:nth-child(2){
+            width: 50vw;
+            height: 60vw;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            background-color: unset;
+            align-items: center;
+            justify-content: flex-end;
+            row-gap: 0.5vh;
+            // 이름표 모양 item
+            &>div{
+              width: 40vw;
+              height: 3vh;
+              border: 1px solid #414141;
+              text-align: center;
+              padding-top: 1vh;
+            }
+            &>div:nth-child(1){
+              border-radius: 0px 0px 30px 30px;
+            }            
+            &>div:nth-child(2){
+              border-radius: 30px 30px 0px 0px;
+            }
+          }
+        }
+      }
+    }
+    #item-con2{
+      width: 100vw;
+      height: 20vh;
+      position: absolute;
+      background-color: #414141;
+    }
+  }
+}
