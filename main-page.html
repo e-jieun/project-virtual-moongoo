@@ -15,8 +15,8 @@
   <div id="root">
     <div id="con">
       <div id="item-con1">
+        <!-- 로고 -->
         <div>
-          <!-- 이 부분을 input 태그로 바꿔야 할 것 같음 -->
           <svg width="94" height="47" viewBox="0 0 94 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
             d="M29.4719 2C29.4719 2 13.8837 26.6673 9.9524 31.2166C8.87035 32.4697 7.84499 33.5117 6.90941 34.3664C3.99873 37.0395 2 37.9215 2 37.9215C2 37.9215 5.26034 45.767 12.2772 45.859C22.2897 45.9918 23.6884 38.3778 23.7876 37.741C23.7876 37.7342 23.8018 37.7342 23.8018 37.741C25.087 45.9952 35.213 45.9271 35.213 45.9271C35.213 45.9271 46.0997 45.5763 46.6289 37.7001C46.6525 37.3255 46.6005 39.0043 47.692 40.9759C50.3996 45.8556 58.144 45.8556 58.144 45.8556C58.144 45.8556 66.6587 46.414 71.3036 37.6286L91.3287 2.13961L29.4719 2Z"
@@ -32,29 +32,11 @@
             fill="#F2F2F2" stroke="#414141" stroke-width="2" stroke-miterlimit="10" />
           </svg>
         </div>
+        <!-- 검색창 -->
+        <!-- con1Child[1] -->
         <div>
           <input type="text">
-          <svg width="355" height="106" viewBox="0 0 355 106" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_i_175_1932)">
-              <path
-                d="M302.629 0C302.442 0 302.349 0 302.163 0H50.5879C24.7782 0.219159 10 16.6561 10 36.8918C10 57.1275 24.7782 73.5644 50.5879 73.7836H279V93L302.163 73.7836C302.349 73.7836 302.442 73.7836 302.629 73.7836C328.625 73.7836 344.682 57.2736 344.682 36.8918C344.682 16.51 328.625 0 302.629 0Z"
-                fill="white" />
-            </g>
-            <defs>
-              <filter id="filter0_i_175_1932" x="0" y="0" width="355" height="110" filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha" />
-                <feOffset dy="4" />
-                <feGaussianBlur stdDeviation="5" />
-                <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                <feBlend mode="normal" in2="shape" result="effect1_innerShadow_175_1932" />
-              </filter>
-            </defs>
-          </svg>
+          <div></div>
         </div>
         <!-- search con -->
         <!-- 흰 동그라미 부분 -->
@@ -237,21 +219,37 @@
     itemCon1.style.alignItems = center;
     itemCon1.style.justifyContent = center;
     
-    console.log('here');
     console.log(itemCon1.children);
+    
+    // itemCon1의 자식요소 배열
+    const con1Child = itemCon1.children;
+    console.log(con1Child);
+
+    // con1Child[1] => 검색창 말풍선 con
+    // con1Child[1] style
+    con1Child[1].style.position = 'relative';
+    con1Child[1].style.top = '-5vw';
+    con1Child[1].style.left = '7vh';
+
+    console.log(con1Child[1]);
+    
+
+    con1Child[1].style.alignItems = 'center';
+    con1Child[1].style.display = 'flex';
+    con1Child[1].style.justifyContent = 'center';
+
+    console.log(con1Child[1].style);
 
     const input = document.getElementsByTagName('input');
-    console.log(input);
     // input의 크기 조정
     input[0].style.width = '250px';
     input[0].style.height = '50px';
     // input을 말풍선 모양의 검색창과 겹쳐줌
-    input[0].style.position = 'absolute';
-    input[0].style.top = '44vh';
-    input[0].style.left = '8vh';
+
     // input 경계선을 안 보이게 해줌
     input[0].style.border = 'none';
-
+    console.log(input[0].style);
+    
   </script>
 </body>
 
