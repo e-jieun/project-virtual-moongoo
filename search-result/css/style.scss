@@ -11,40 +11,60 @@
     height: inherit;
     display: grid;
     justify-content: center;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 3fr;
     #item-con1{
       width: 100vw;
-      height: 100vh;
+      height: 30vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       row-gap: 5vw;
+      &>div:nth-child(1){
+        position: absolute;
+        top: 3vh;
+        left: 3vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        &>div{
+          position: relative;
+          left: 25vw;
+          top: 5vh;
+          
+        }
+      }
       &>div:nth-child(2){
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-      }
-      &>div:nth-child(2)>input{
-        width: 40vh;
-        height: 10vh;
-        border: none;
-        background-color: #fff;
-        border-radius: 50px;
-        box-shadow: inset 1px 1px 10px rgba($color: #c4c4c4, $alpha: 0.8);
-      }
-      &>div:nth-child(2)>div{
-        width: 0vh;
-        background-color: #fff;
-        height: 0vh;
-        position: relative;
-        right: 5vh;
-        top: -0.5vh;
-        width: 0px;
-        height: 0px;
-        border-bottom: 30px solid #f2f2f2;
-        border-left: 25px solid transparent;
-        border-right: 0px solid transparent;
+        &>input{
+          width: 40vh;
+          height: 10vh;
+          border: none;
+          background-color: #fff;
+          border-radius: 50px;
+          box-shadow: inset 1px 1px 10px rgba($color: #c4c4c4, $alpha: 0.8);
+        }
+        &>div{
+          width: 0vh;
+          background-color: #fff;
+          height: 0vh;
+          position: relative;
+          right: 5vh;
+          top: -0.5vh;
+          width: 0px;
+          height: 0px;
+          border-bottom: 30px solid #f2f2f2;
+          border-left: 25px solid transparent;
+          border-right: 0px solid transparent;
+        }
+        &>svg{
+          position: relative;
+          top: -10vh;
+          left: -3vh;
+          background: none;
+        }
       }
       &>div:nth-child(3){
         width: 15vh;
@@ -76,10 +96,12 @@
     }
     #promotion-con{
       width: 100vw;
-      height: 100vh;
+      height: 200vh;
       display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      row-gap: 10vh;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      row-gap: 15vh;
+      position: relative;
+      top: 5vh;
       .main-con{
         // border: 1px solid black;
         display: flex;
@@ -195,7 +217,7 @@
   justify-content: center;
   background: linear-gradient(transparent, #fdc6df);
   position: absolute;
-  top: 200vh;
+  top: 220vh;
   z-index: 5;
   &>div:nth-child(1){
     position: relative;
