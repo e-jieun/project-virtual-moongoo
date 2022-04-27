@@ -1,0 +1,109 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#root{
+  width: 100vw;
+  height: 150vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr 3fr;
+  .con-1{
+    background-color: #c4c4c4;
+    &>div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &>div:nth-child(1){
+        position: absolute;
+        top: 3vh;
+        left: 3vh;
+      }
+      &>div:nth-child(2){
+        width: 90vw;
+        height: 80vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &>svg:nth-child(1){
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .con-2{
+    background-color: #414141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &>div{
+      color: #f2f2f2;
+      width: 90vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &>div:nth-child(1){
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+      &>div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1vh;
+      }
+    }
+  }
+  .con-3{
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 4vh;
+    &>div:nth-child(1){
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+    }
+    &>div:nth-child(2){
+      width: 250px;
+      height: 350px;
+      border: 1px solid #414141;
+      border-radius: 30px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &>div:nth-child(1){
+        width: 200px;
+        height: 200px;
+        background-color: #c4c4c4;
+      }
+      &>div:nth-child(2){
+        width: 20vh;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &>div:nth-child(1){
+          display: flex;
+          flex-direction: column;
+          row-gap: 1vh;
+          &>div:nth-child(1){
+            font-weight: 600;
+          }
+        }
+        &>div:nth-child(2){
+          position: relative;
+          top: 1vh;
+          &>svg{
+            width: 25px;
+            height: 25px;
+            border: 1px solid #414141;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
