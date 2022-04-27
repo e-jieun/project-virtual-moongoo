@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/e222cf7a8c.js" crossorigin="anonymous"></script>
-  <title>Document</title>
+  <title>search-result</title>
   <style>
 
   </style>
@@ -188,8 +188,35 @@
     </div>
   </div>
 
-
   <script>
+    // 로고가 보이지 않도록 해줌
+    let logo = document.querySelector('svg');
+    console.log(logo);
+    logo.style.display = 'none';
+
+    // search! 부분 보이지 않도록 해줌
+    // #item-con1>div:nth-child(3)
+    const itemCon1 = document.getElementById('item-con1');
+    console.log(itemCon1);
+
+    const searchCon = itemCon1.children[2];
+    console.log(searchCon);
+    searchCon.style.display = 'none';
+
+    // 오늘의 문구 레시피 부분 보이지 않도록 해줌
+    // #more
+    const more = document.getElementById('more');
+    console.dir(more);
+    console.log(more);
+    more.style.display = 'none';
+
+    // 검색창 위치를 상단으로 올려줌
+    // #item-con1>div:nth-child(2)
+    const search = itemCon1.children[1];
+    console.log(search);
+    search.style.position = 'absolute';
+    search.style.top = '10vh';
+
 
   </script>
 </body>
