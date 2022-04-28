@@ -71,21 +71,25 @@
     }
 
     #note-con>div {
-      width: inherit;
+      width: 90vw;
       height: 75vh;
       position: absolute;
+      row-gap: 1vh;
     }
     
     #note-con>div>img {
       object-fit: fill;
-      box-shadow: 0px 5px 5px rgba(65, 65, 65, 0.2);
+      border: 1px solid var(--color-c4);
+      box-shadow: 0px 5px 1px rgba(65, 65, 65, 0.2);
     }
 
     #note-con>#sticker-con {
-      width: 100vw;
+      width: 90vw;
       display: grid;
       grid-template-rows: 1fr 1fr 1fr;
-      display: none;
+      /* display: none; */
+      position: absolute;
+      left: 0;
     }
 
     #sticker-con>div {
@@ -102,20 +106,19 @@
       border: 1px solid var(--color-41);
       column-gap: 1vh;
     }
-    #sticker-con>div>div:nth-child(1)>div>span {
-      font-weight: 600;
-      font-size: 0.8rem;
+    #sticker-con>div>div:nth-child(1)>div:nth-child(2) {
+      position: relative;
+      top: -3vh;
     }
     #sticker-con>div>div:nth-child(1)>div:nth-child(3) {
       position: relative;
-      top: 5vh;
-      left: -11vh;
+      top: 3vh;
+      left: -8.5vh;
     }
     /* image item */
     #sticker-con>div>div:nth-child(1)>div:nth-child(1) {
-      width: 40%;
-      height: 50%;
-      /* border: 1px solid var(--color-41); */
+      width: 20vh;
+      height: 20vh;
       background-color: var(--color-c4);
     }
 
@@ -135,6 +138,10 @@
     #con>div:nth-child(4)>div {
       right: 5vh;
       position: relative;
+    }
+
+    #con>div:nth-child(4)>div:nth-child(1) {
+      font-size: 1.2rem;
     }
   </style>
 </head>
