@@ -125,9 +125,6 @@
   height: 100vh;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-  row-gap: 10vh;
 }
 
 #root #con #promotion-con .main-con {

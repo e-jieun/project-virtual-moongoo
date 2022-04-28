@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
-  <script src="https://kit.fontawesome.com/e222cf7a8c.js" crossorigin="anonymous"></script>
   <title>Document</title>
   <style>
 
@@ -272,6 +271,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -297,7 +297,6 @@
 
 
   <script>
-
     document.body.style.boxSizing = 'border-box';
 
     const promotionCon = document.getElementById('promotion-con');
@@ -328,6 +327,12 @@
     const mainCon = document.getElementsByClassName('main-con');
     console.log(mainCon);
 
+    // Q1. 
+    // 핸드폰 크기에서 main-con이 겹쳐져(원래는 mainCon[2]까지만 보이게 해줄 예정이었습니다) 3번부터 뷰포트가 800px이하면 화면에서 컨텐츠를 보이지 않게 display: none;을 주고,
+    // 태블릿 크기인 800px 이상부턴 mainCon[3]부터 mainCon[mainCon.length-1]까지 보여지도록 display: block;을 적용했습니다
+    // 그런데 이 부분을 적용하면 태블릿 화면에서 모양새가 왼쪽으로 조금씩 밀려서 틀어지는 현상이 일어납니다 -> 모양새가 틀어지는 원인이 뭘까요??
+    // 적용하지 않으면 핸드폰 화면에서 너무 많은 mainCon이 나타나서 줄줄이 모양새가 겹쳐집니다
+
     // 화면이 핸드폰 크기인 800px 이하로 바뀌면 .main-con의 3번째부터 숨겨준다
     if(window.matchMedia('(max-width: 800px)').matches){
       // .main-con의 3번째부터 숨겨준다
@@ -336,9 +341,8 @@
       }
     } else{
       for(let i = 3; i < mainCon.length; i++){
-        mainCon[i].style.display = 'block';
+        mainCon[i].style.display = 'inline';
         console.log('tablet');
-        // !태블릿의 경우 스티커 위치를 바로 잡을 것!
       }
     }
 
