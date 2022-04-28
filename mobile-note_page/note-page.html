@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    :root {
+      --color-41: rgb(65, 65, 65);
+      --color-c4: #c4c4c4;
+      --color-f2: #f2f2f2;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      background-color: var(--color-f2);
+      overflow: hidden;
+      
+    }
+
+    #arrow-con {
+      width: inherit;
+      height: 12.5vh;
+      border: 1px solid var(--color-41);
+      display: flex;
+      align-items: center;
+      background-color: var(--color-f2);
+    }
+
+    #arrow-con>svg {
+      position: relative;
+      left: 5vh;
+    }
+
+    #btn-con {
+      width: 5vh;
+      height: 25vh;
+      position: sticky;
+      left: 1vh;
+      display: grid;
+      /* 버튼 세로값 */
+      grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    button {
+      border-radius: 20px 0px 0px 20px;
+      border: 1px solid var(--color-41);
+    }
+
+    #note-con {
+      width: 90vw;
+      height: 75%;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+
+      top: -25vh;
+      left: 6vh;
+      overflow: scroll;
+    }
+
+    #note-con>div {
+      width: inherit;
+      height: 75vh;
+      position: absolute;
+    }
+    
+    #note-con>div>img {
+      object-fit: fill;
+      box-shadow: 0px 5px 5px rgba(65, 65, 65, 0.2);
+    }
+
+    #note-con>#sticker-con {
+      width: 100vw;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      display: none;
+    }
+
+    #sticker-con>div {
+      border: 1px solid var(--color-41);
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+    }
+
+    #sticker-con>div>div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* flex-direction: column; */
+      border: 1px solid var(--color-41);
+      column-gap: 1vh;
+    }
+    #sticker-con>div>div:nth-child(1)>div>span {
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    #sticker-con>div>div:nth-child(1)>div:nth-child(3) {
+      position: relative;
+      top: 5vh;
+      left: -11vh;
+    }
+    /* image item */
+    #sticker-con>div>div:nth-child(1)>div:nth-child(1) {
+      width: 40%;
+      height: 50%;
+      /* border: 1px solid var(--color-41); */
+      background-color: var(--color-c4);
+    }
+
+    #con>div:nth-child(4) {
+      width: 100vw;
+      height: 12.5vh;
+      border: 1px solid var(--color-41);
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      column-gap: 2vh;
+      background-color: var(--color-f2);
+    }
+
+    #con>div:nth-child(4)>div {
+      right: 5vh;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="con">
+      <!-- 최상단 박스 - 이전 화살표 -->
+      <div id="arrow-con">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="25" r="24.5" transform="rotate(-90 25 25)" fill="#F2F2F2" stroke="black" />
+          <path d="M26.5 37.999L12 24.499M12 24.499L26.5 11.999M12 24.499H38.5" stroke="black" />
+        </svg>
+      </div>
+      <div id="btn-con">
+        <button id="1">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23 1H1V23H23V1Z" stroke="#414141" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            
+        </button>
+        <button id="2">
+          <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_179_2941)">
+            <path d="M0.411621 0.369141H22.3949" stroke="#414141" stroke-linejoin="round"/>
+            <path d="M1.9917 11.3809L20.6878 11.4355" stroke="#414141" stroke-linejoin="round"/>
+            <path d="M0.367676 22.3936H22.351" stroke="#414141" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_179_2941">
+            <rect width="22.7627" height="22.7627" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>            
+        </button>
+        <button id="3">
+          <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_179_2969)">
+            <path d="M0.36377 15.749H22.1144" stroke="#414141" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M0.36377 7.74707H22.1144" stroke="#414141" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.0947 22.1139V0.363281" stroke="#414141" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7.5293 22.1139V0.363281" stroke="#414141" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_179_2969">
+            <rect width="22.4781" height="22.4781" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
+        </button>
+      </div>
+      <!-- 겹쳐서 버튼 부분의 숫자값이 올라가면 앞으로 보여지도록 해야함 -->
+      <!-- 노트 박스 -->
+      <div id="note-con">
+        <div id="note-1">
+          <img src="plain-note.svg" alt="plain-note">
+          <img src="plain-note.svg" alt="plain-note">
+        </div>
+        <div id="note-2">
+          <img src="line-note.svg" alt="line-note">
+          <img src="line-note.svg" alt="line-note">
+        </div>
+        <div id="note-3">
+          <img src="grid-note.svg" alt="grid-note">
+          <img src="grid-note.svg" alt="grid-note">
+        </div>
+        <!-- 스티커 박스 -->
+        <div id="sticker-con">
+          <!-- 1 -->
+          <div>
+            <div>
+              <div>image</div>
+              <div><span>MARKET.</span><br>
+                lorem ipsum</div>
+              <div><span>PRODUCT.</span><br>
+                lorem ipsum
+              </div>
+            </div>
+            <div>
+              <div> <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="25" cy="25" r="24.5" transform="rotate(-90 25 25)" fill="#F2F2F2" stroke="#414141" />
+                  <path d="M12 25H37" stroke="#414141" />
+                  <path d="M25 38V13" stroke="#414141" />
+                </svg></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>image</div>
+              <div>MARKET.<br>
+                lorem ipsum</div>
+              <div>PRODUCT.<br>
+                lorem ipsum
+              </div>
+            </div>
+            <div>
+              <div> <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="25" cy="25" r="24.5" transform="rotate(-90 25 25)" fill="#F2F2F2" stroke="#414141" />
+                  <path d="M12 25H37" stroke="#414141" />
+                  <path d="M25 38V13" stroke="#414141" />
+                </svg></div>
+            </div>
+          </div>
+          <div>
+            <div>
+              <div>image</div>
+              <div>MARKET.<br>
+                lorem ipsum</div>
+              <div>PRODUCT.<br>
+                lorem ipsum
+              </div>
+            </div>
+            <div>
+              <div> <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="25" cy="25" r="24.5" transform="rotate(-90 25 25)" fill="#F2F2F2" stroke="#414141" />
+                  <path d="M12 25H37" stroke="#414141" />
+                  <path d="M25 38V13" stroke="#414141" />
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 최하단 박스 - 더 사용해보기 + -->
+      <div>
+        <div>더 체험할 수 있어요!</div>
+        <div>
+          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="25" cy="25" r="24.5" transform="rotate(-90 25 25)" fill="#F2F2F2" stroke="#414141" />
+            <path d="M12 25H37" stroke="#414141" />
+            <path d="M25 38V13" stroke="#414141" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
