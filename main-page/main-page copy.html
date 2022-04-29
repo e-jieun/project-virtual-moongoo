@@ -299,6 +299,15 @@
   <script>
     document.body.style.boxSizing = 'border-box';
 
+    // get #root
+    const root = document.getElementById('root');
+    console.dir(root);
+
+    // get .main-con
+    const mainCon = document.getElementsByClassName('main-con');
+    console.log(mainCon);
+
+    
     const promotionCon = document.getElementById('promotion-con');
     console.log(promotionCon);
     console.log(promotionCon.style);
@@ -315,7 +324,7 @@
     if(window.matchMedia('(max-width: 800px)').matches){
       promotionCon.style.display = 'grid';
       promotionCon.style.gridTemplateColumns = '1fr';
-    // 800px 이하 핸드폰 크기에서 1열이 아니면, 800px 이상 태블릿 크기면 2열이 된다
+      // 800px 이하 핸드폰 크기에서 1열이 아니면, 800px 이상 태블릿 크기면 2열이 된다
     } else{
       // !저장을 하고 새로고침을 새로 해줘야만 제대로 실행이 된다
       // !else인 경우의 실행문을 적어주지 않아서 문제
@@ -324,8 +333,15 @@
       console.log('tablet');
     }
 
-    const mainCon = document.getElementsByClassName('main-con');
-    console.log(mainCon);
+    // mainCon은 배열임
+    // for문으로 반복적 적용을 해줘야 함
+    for(let i = 0; i < mainCon.length; i++){
+      // mainCon에 적용해야할 style
+      mainCon[i].style.minHeight = '500px';
+      mainCon[i].style.minWidth = '300px';
+      console.log(mainCon[i].style);
+    }
+    console.log('여기입니다');
 
     // Q1. 
     // 핸드폰 크기에서 main-con이 겹쳐져(원래는 mainCon[2]까지만 보이게 해줄 예정이었습니다) 3번부터 뷰포트가 800px이하면 화면에서 컨텐츠를 보이지 않게 display: none;을 주고,
@@ -345,7 +361,8 @@
     //     console.log('tablet');
     //   }
     // }
-    // !숨겨주지 않고 그대로 나타나게 하고 컨테이너의 높이값을 조정해주면 된다
+    // !숨겨주지 않고 그대로 나타나게 하고 컨테이너의 높이값을 조정해주거나
+    // !미디어 쿼리의 경우 아이템을 담은 컨테이너가 상대값일 경우 최솟값, 최대값 설정을 해줘서 모양이 틀어지지 않도록 한다
 
     // mainCon의 구조
     const promoCon = document.getElementById('promotion-con');
@@ -365,7 +382,7 @@
     for(let i = 0; i < mainCon.length; i++){
       // !이 부분에서 addEventListener 이벤트를 생성해줘야한다
       // console.log(mainCon[i]);
-      mainCon[i].addEventListener('click', function(){
+      mainCon[i].addEventListener('mouseover', function(){
         const stickerCon = mainCon[i].children[0];
         console.log(stickerCon);
         const sticker = stickerCon.children;
@@ -379,8 +396,8 @@
         // 세모
         if(sticker[1] === stickerCon.children[1]){
           console.log(sticker[1]);
-          sticker[1].children[0].style.top = '4vh';
-          sticker[1].children[0].style.left = '-7vh';
+          sticker[1].children[0].style.top = '2vh';
+          sticker[1].children[0].style.left = '-6vh';
           console.log(sticker[1].children[0].style);
           sticker[1].children[0].style.transform = 'rotate(-90deg)';
         }

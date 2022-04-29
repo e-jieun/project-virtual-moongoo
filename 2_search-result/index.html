@@ -291,8 +291,7 @@
       // 물결
       if(sticker[0] === stickerCon.children[0]){
         console.log(sticker[0]);
-        sticker[0].children[0].style.top = '6vh';
-        sticker[0].children[0].style.transform = 'rotate(-90deg)';
+        sticker[0].children[0].style.display = 'none';
       }
       // 세모
       if(sticker[1] === stickerCon.children[1]){
@@ -300,10 +299,7 @@
         console.log(stickerItem2);
         console.log(stickerItem2.style);
         console.log(stickerItem2);
-        sticker[1].children[0].style.top = '0vh';
-        sticker[1].children[0].style.left = '-7vh';
-        console.log(sticker[1].children[0].style);
-        sticker[1].children[0].style.transform = 'rotate(-90deg)';
+        sticker[1].children[0].style.display = 'none';
       }
       // 타원형
       // ? display: none;이 적용된 부분 살펴보기

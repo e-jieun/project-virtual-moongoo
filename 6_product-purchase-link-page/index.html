@@ -121,5 +121,29 @@
       </div>
     </div>
   </div>
+  <script>
+    // get ul
+    const ul = document.getElementsByTagName('ul');
+    console.log(ul);
+    // 'GO!' 버튼을 누를 때마다 추가되는 인터랙션을 구현할 부분
+    for(let i = 0; i < ul.length; i++){
+      // get li
+      const li = ul[i].children;
+      console.log(li);
+      // ul의 인덱스가 홀수일 때마다 'GO!'가 들어있는 li가 들어있는 ul(con)이 있다
+      // GO! 버튼에만 효과를 적용하려면
+      if(i%2 === 1){
+        const ulChildGoCon = ul[i].children[1];
+        console.log(ulChildGoCon);
+        console.log(ulChildGoCon.style);
+        ul[i].addEventListener('click', function(){
+          ulChildGoCon.style.backgroundColor = '#FDC6DF';
+          ulChildGoCon.style.color = '#414141';
+          ulChildGoCon.style.border = '1px solid #414141';
+          console.log('분홍색으로 바뀜');
+        });
+      }
+    }
+  </script>
 </body>
 </html>

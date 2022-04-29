@@ -187,7 +187,6 @@
   }
 }
 #item-con2{
-  // 스크롤이 빈 공간으로 보였음
   width: 100vw;
   // border: 1px solid black;
   height: 20vh;
@@ -196,7 +195,7 @@
   justify-content: center;
   background: linear-gradient(transparent, #fdc6df);
   position: absolute;
-  bottom: -220vh;
+  top: 200vh;
   z-index: 5;
   &>div:nth-child(1){
     position: relative;

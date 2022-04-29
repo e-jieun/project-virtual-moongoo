@@ -172,13 +172,13 @@
 }
 
 #root .con-3 > div > div > div > ul:nth-child(1) > li:nth-child(1) {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   position: relative;
   top: 5px;
 }
 
 #root .con-3 > div > div > div > ul:nth-child(1) > li:nth-child(2) {
-  width: 50px;
+  width: 30px;
   border: 1px solid #414141;
 }
 
