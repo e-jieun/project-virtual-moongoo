@@ -8,9 +8,6 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/e222cf7a8c.js" crossorigin="anonymous"></script>
   <title>search-result</title>
-  <style>
-
-  </style>
 </head>
 
 <body>
@@ -276,6 +273,45 @@
     search.style.position = 'absolute';
     search.style.top = '15vh';
 
+    const mainCon = document.getElementsByClassName('main-con');
+    // mainCon의 구조
+    console.dir(mainCon);
+    // mainCon의 자식요소 중 0번이 스티커 요소들을 담은 컨테이너
+    console.log(mainCon[0].children);
+    // 스티커 요소
+    console.log(mainCon[0].children[0].children);
+
+    // 모든 mainCon에서 적용되도록 반복문을 돌려줘야한다
+    for(let i = 0; i < mainCon.length; i++){
+      // console.log(mainCon[i]);
+      const stickerCon = mainCon[i].children[0];
+      console.log(stickerCon);
+      const sticker = stickerCon.children;
+      console.log(sticker);
+      // 물결
+      if(sticker[0] === stickerCon.children[0]){
+        console.log(sticker[0]);
+        sticker[0].children[0].style.top = '6vh';
+        sticker[0].children[0].style.transform = 'rotate(-90deg)';
+      }
+      // 세모
+      if(sticker[1] === stickerCon.children[1]){
+        const stickerItem2 = sticker[1].children[0].children[0];
+        console.log(stickerItem2);
+        console.log(stickerItem2.style);
+        console.log(stickerItem2);
+        sticker[1].children[0].style.top = '0vh';
+        sticker[1].children[0].style.left = '-7vh';
+        console.log(sticker[1].children[0].style);
+        sticker[1].children[0].style.transform = 'rotate(-90deg)';
+      }
+      // 타원형
+      // ? display: none;이 적용된 부분 살펴보기
+      if(sticker[2] === stickerCon.children[2]){
+        console.log(sticker[2]);
+        sticker[2].children[0].style.display = 'block';
+      }
+    }
 
   </script>
 </body>

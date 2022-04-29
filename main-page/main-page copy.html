@@ -345,42 +345,53 @@
     //     console.log('tablet');
     //   }
     // }
+    // !숨겨주지 않고 그대로 나타나게 하고 컨테이너의 높이값을 조정해주면 된다
 
     // mainCon의 구조
+    const promoCon = document.getElementById('promotion-con');
+    console.log(promoCon.style);
+    // !높이값이 정해져있지 않음, 높이값이 정해져있지 않아서 겹쳐지는 문제가 생겼음
+    promoCon.style.height = '200vh';
     console.dir(mainCon);
     // mainCon의 자식요소 중 0번이 스티커 요소들을 담은 컨테이너
     console.log(mainCon[0].children);
     // 스티커 요소
     console.log(mainCon[0].children[0].children);
 
-    // 모든 mainCon애서 적용되도록 반복문을 돌려줘야함
+    // 모든 mainCon에서 적용되도록 반복문을 돌려줘야한다
     
+
+    // ?여기서 이벤트를 추가하면 되는 건가?
     for(let i = 0; i < mainCon.length; i++){
+      // !이 부분에서 addEventListener 이벤트를 생성해줘야한다
       // console.log(mainCon[i]);
-      const stickerCon = mainCon[i].children[0];
-      console.log(stickerCon);
-      const sticker = stickerCon.children;
-      console.log(sticker);
-      // 물결
-      if(sticker[0] === stickerCon.children[0]){
-        console.log(sticker[0]);
-        sticker[0].children[0].style.top = '10vh';
-        sticker[0].children[0].style.transform = 'rotate(-90deg)';
-      }
-      // 세모
-      if(sticker[1] === stickerCon.children[1]){
-        console.log(sticker[1]);
-        sticker[1].children[0].style.top = '2.5vh';
-        sticker[1].children[0].style.left = '-5vh';
-        console.log(sticker[1].children[0].style);
-        sticker[1].children[0].style.transform = 'rotate(-90deg)';
-      }
-      // 타원형
-      // ? display: none;이 적용된 부분 살펴보기
-      if(sticker[2] === stickerCon.children[2]){
-        console.log(sticker[2]);
-        sticker[2].children[0].style.display = 'block';
-      }
+      mainCon[i].addEventListener('click', function(){
+        const stickerCon = mainCon[i].children[0];
+        console.log(stickerCon);
+        const sticker = stickerCon.children;
+        console.log(sticker);
+        // 물결
+        if(sticker[0] === stickerCon.children[0]){
+          console.log(sticker[0]);
+          sticker[0].children[0].style.top = '10vh';
+          sticker[0].children[0].style.transform = 'rotate(-90deg)';
+        }
+        // 세모
+        if(sticker[1] === stickerCon.children[1]){
+          console.log(sticker[1]);
+          sticker[1].children[0].style.top = '4vh';
+          sticker[1].children[0].style.left = '-7vh';
+          console.log(sticker[1].children[0].style);
+          sticker[1].children[0].style.transform = 'rotate(-90deg)';
+        }
+        // 타원형
+        // ? display: none;이 적용된 부분 살펴보기
+        if(sticker[2] === stickerCon.children[2]){
+          console.log(sticker[2]);
+          console.log(sticker[2].children[0]);
+          sticker[2].children[0].style.display = 'block';
+        }
+      });
     }
 
   </script>
