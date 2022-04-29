@@ -1,0 +1,253 @@
+*{
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+#root{
+  width: 100vw;
+  height: 250vh;
+  #con{
+    width: inherit;
+    height: inherit;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 1fr 1fr;
+    #item-con1{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 5vw;
+      &>div:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      &>div:nth-child(2)>input{
+        width: 35vh;
+        height: 10vh;
+        border: none;
+        background-color: #fff;
+        border-radius: 50px;
+        box-shadow: inset 1px 1px 10px rgba($color: #c4c4c4, $alpha: 0.8);
+      }
+      &>div:nth-child(2)>div{
+        width: 0vh;
+        background-color: #fff;
+        height: 0vh;
+        position: relative;
+        right: 5vh;
+        top: -0.5vh;
+        width: 0px;
+        height: 0px;
+        border-bottom: 30px solid #f2f2f2;
+        border-left: 25px solid transparent;
+        border-right: 0px solid transparent;
+      }
+      &>div:nth-child(3){
+        width: 15vh;
+        height: 8vh;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &>div{
+          width: 90%;
+          height: 80%;
+          border: 1px solid #414141;
+          background-color: #fdc6df;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &>div{
+            background: none;
+            letter-spacing: 5px;
+          }
+        }
+      }
+      #more{
+        position: absolute;
+        bottom: 5vh;
+      }
+    }
+    #promotion-con{
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      // *
+      .main-con{
+        // border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: none;
+
+        // 스티커 인터랙션 부분
+        &>div:nth-child(1){
+          position: absolute;
+          z-index: 3;
+          background-color: unset;
+
+          &>div:nth-child(1){
+            background-color: unset;
+            svg{
+            background-color: unset;
+            position: relative;
+            left: -12vh;
+            top: 5vh;
+            }
+          }
+          &>div:nth-child(2){
+            background-color: unset;
+            svg{
+            background-color: unset;
+            position: relative;
+            left: 15vh;
+            top: -7vh;
+            }
+          }
+          // 타원형 스티커 부분 con
+          &>div:nth-child(3){
+            background-color: unset;
+            display: none;
+          // 타원형 스티커 부분 item
+            svg{
+            background-color: unset;
+            position: relative;
+            left: 12vh;
+            top: -2vh;
+            }
+            &>div{
+              height: 4vh;
+              background-color:  #414141;
+              position: relative;
+              left: 12vh;
+              top: -8vh;
+              border-radius: 50%;
+              transform: rotate(-35deg);
+              text-align: center;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              // display: none;
+              &>div{
+                background-color: unset;
+                color: #f2f2f2;
+                letter-spacing: 0.2vh;
+              }
+            }
+          }
+        }
+        &>div:nth-child(2){
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          position: absolute;
+          &>div:nth-child(1){
+            width: 30vh;
+            height: 30vh;
+            background-color: #fff;
+          } 
+          // 이름표 모양 con
+          &>div:nth-child(2){
+            width: 30vh;
+            height: 22vh;
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            background-color: unset;
+            align-items: center;
+            justify-content: flex-end;
+            row-gap: 0.5vh;
+            top: 10vh;
+            // 이름표 모양 item
+            &>div{
+              width: 20vh;
+              height: 3vh;
+              border: 1px solid #414141;
+              text-align: center;
+              padding-top: 1vh;
+            }
+            &>div:nth-child(1){
+              border-radius: 0px 0px 30px 30px;
+            }            
+            &>div:nth-child(2){
+              border-radius: 30px 30px 0px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#item-con2{
+  // 스크롤이 빈 공간으로 보였음
+  width: 100vw;
+  // border: 1px solid black;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(transparent, #fdc6df);
+  // 스크롤 할 때 하단에 fixed되는 더 보기 con
+  position: absolute;
+  bottom: -327vh;
+  z-index: 5;
+  // display: none;
+  // 상단으로 이동하는 화살표 표시
+  &>div:nth-child(1){
+    position: relative;
+    left: -20vw;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #414141;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: none;
+  }
+  // 더 많은 소식이 기다리고 있어요! con
+  &>div:nth-child(2){
+    width: 20vh;
+    height: 10vh;
+    border: 1px solid #414141;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: none;
+  // 더 많은 소식이 기다리고 있어요! item
+    &>div{
+      width: 90%;
+      height: 80%;
+      background-color: #E387A8;
+      border: 1px solid #414141;
+      border-radius: 50%;  
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      &>div{
+        background-color: #E387A8;
+        text-align: center;
+        position: relative;
+        top: 0.5vh;
+        span{
+          background-color: #E387A8;
+          font-weight: 600;
+        }
+      }
+      svg{
+        background-color: #E387A8;
+      }
+    }
+  }
+}
