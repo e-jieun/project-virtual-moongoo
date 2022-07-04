@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="btn-con">
+    <a href="">left</a>
+    <a href="">right</a>
+  </div>
+  <div id="slide-item">
+    <div id="slide-1">1</div>
+    <div id="slide-2">2</div>
+    <div id="slide-3">3</div>
+  </div>
+
+  <script>
+    const btnCon = document.getElementById('btn-con');
+    const left = btnCon.firstElementChild;
+    const right = btnCon.lastElementChild;
+
+    let isStatus = 1;
+    // *left btn
+    left.addEventListener('click', function(){
+      console.log(isStatus);
+      // todo: 1보다 크거나 -1; 아니면 그대로
+      isStatus > 1 && isStatus <= 3 ? isStatus-- : isStatus = isStatus;
+      console.log(isStatus);
+      // todo: window에 hashchange 이벤트를 넣어줘야 한다
+      window.addEventListener('hashchange', function(){
+        location.href = `#slide-${isStatus}`;
+      })
+    });
+    // *right btn
+    right.addEventListener('click', function(){
+      console.log(isStatus);
+      // todo: 1보다 크거나 3보다 작거나 같으면 +1; 아니면 그대로
+      isStatus > 1 && isStatus <= 3 ? isStatus++ : isStatus = isStatus;
+      console.log(isStatus);
+      // todo: window에 hashchange 이벤트를 넣어줘야 한다
+      window.addEventListener('hashchange', function(){
+        location.href = `#slide-${isStatus}`;
+      })
+    })
+  </script>
+</body>
+
+</html>
