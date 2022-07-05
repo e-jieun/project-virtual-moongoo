@@ -1,3 +1,13 @@
+const notePage = {
+  con: document.getElementById('con'),
+  conLastChild: document.getElementById('con').lastElementChild,
+  svgCon: document.getElementById('con').lastElementChild.children[1],
+  stickerCon: document.getElementById('sticker-con'),
+  button: document.getElementsByTagName('button'),
+
+
+}
+
 // get #con
 const con = document.getElementById('con');
 console.log(con);
@@ -23,7 +33,7 @@ console.log(svgCon);
 svgCon.addEventListener('click', function(){
   if(clickValue === true){
     stickerCon.style.display = 'block';
-    svgCon.children[0].style.transform = 'rotate(45deg)';
+    svgCon.firstElementChild.style.transform = 'rotate(45deg)';
     // !z-index 값이 없어서 클릭해도 겹쳐져서 보이지 않는 단점이 있었다
     console.log(stickerCon.style);
     clickValue = false;
