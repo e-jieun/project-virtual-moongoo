@@ -1,4 +1,17 @@
-*{
-  margin: 0;
-  padding: 0;
+// *variable
+$color-00: #000;
+$color-41: #414141;
+
+// *@mixin
+%border-bk{
+  border: 1px solid $color-00;
 }
+@mixin border($color){
+  border: 1px solid $color;
+}
+.divider{
+  @include border($color-41);
+  width: 50px;
+}
+
+// 
