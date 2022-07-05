@@ -5,15 +5,41 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>seller-page</title>
+  <script src="/js/common.js" type="module" defer></script>
+  <script src="/js/3-1-seller-page.js" type="module" defer></script>
+  <link rel="stylesheet" href="./css/3-1-seller-page.css">
 </head>
 <body>
   <div id="root">
-
-    <div class="con-1"></div>
+    <div id="seller-con">
+      <div>
+        <img src="/img/before-btn.svg" alt="이전 버튼">
+      </div>
+      <div id="seller-id">
+      </div>
+    </div>
+    <!-- *입점링크 -->
+    <div id="store-con">
+      <!-- line -->
+      <div class="divider"></div>
+      <!-- 입점링크 아이콘 -->
+      <img src="" alt="입점 링크 아이콘">
+      <!-- 링크 스티커 리스트 -->
+      <div id="link-con">
+        <!-- (ul>li+img)*6 -->
+      </div>
+    </div>
     
-    <div class="con-2"></div>
-    
-    <div class="con-3"></div>
+    <!-- border가 있는 컨테이너 -->
+    <div id="news-con">
+      <div>NEWS</div>
+      <!-- line -->
+      <div class="divider"></div>
+      <div class="news-item">
+        <div>데이트 객체가 날짜를 찍어줄 부분</div>
+        <div>input-text가 저장이 될 부분</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
