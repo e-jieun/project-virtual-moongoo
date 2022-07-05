@@ -1,0 +1,141 @@
+$color-41: rgb(65, 65, 65);
+$color-c4: #c4c4c4;
+$color-f2: #f2f2f2;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  background-color: $color-f2;
+  overflow: hidden;
+
+}
+
+#arrow-con {
+  width: inherit;
+  height: 12.5vh;
+  border: 1px solid $color-41;
+  display: flex;
+  align-items: center;
+  background-color: $color-f2;
+
+  &>img {
+    position: relative;
+    left: 5vh;
+  }
+}
+
+
+#btn-con {
+  width: 5vh;
+  height: 25vh;
+  position: sticky;
+  left: 1vh;
+  display: grid;
+  /* 버튼 세로값 */
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+button {
+  border-radius: 20px 0px 0px 20px;
+  border: 1px solid $color-41;
+}
+
+#note-con {
+  width: 90vw;
+  height: 75%;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  top: -25vh;
+  left: 6vh;
+  overflow: scroll;
+
+  &>div {
+    width: 90vw;
+    height: 75vh;
+    position: absolute;
+    row-gap: 1vh;
+
+    &>img {
+      object-fit: fill;
+      border: 1px solid $color-c4;
+      box-shadow: 0px 5px 1px rgba(65, 65, 65, 0.2);
+    }
+  }
+
+  &>#sticker-con {
+    width: 90vw;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* #con>div:nth-child(4)에서 클릭 이벤트 */
+    display: none;
+    position: absolute;
+    left: 0;
+
+    &>div {
+      border: 1px solid $color-41;
+      display: grid;
+      grid-template-columns: 4fr 1fr;
+      background-color: #f2f2f2;
+
+      &>div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        /* flex-direction: column; */
+        border: 1px solid $color-41;
+        column-gap: 1vh;
+      }
+
+      &>div:nth-child(1) {
+
+        /* image item */
+        &>div:nth-child(1) {
+          width: 20vh;
+          height: 20vh;
+          background-color: $color-c4;
+        }
+
+        &>div:nth-child(2) {
+          position: relative;
+          /* top: -3vh;
+          left: 1vh; */
+        }
+
+        &>div:nth-child(3) {
+          position: relative;
+        }
+
+      }
+    }
+  }
+}
+
+#con>div:nth-child(4) {
+  width: 100vw;
+  height: 12.5vh;
+  border: 1px solid $color-41;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 2vh;
+  background-color: $color-f2;
+
+  &>div {
+    right: 5vh;
+    position: relative;
+  }
+
+  &>div:nth-child(1) {
+    font-size: 1.2rem;
+  }
+}
