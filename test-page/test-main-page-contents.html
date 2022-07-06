@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    console.log(root);
+    console.log(root.style);
+
+    let center = 'center';
+    
+    root.style.width = '100vw';
+    root.style.height = '100vh';
+    // ul 가운데 정렬
+    root.style.display = 'flex';
+    root.style.alignItems = center;
+    root.style.justifyContent = center;
+
+    console.log(root.children);
+    const ul = root.children[0];
+    console.log(ul);
+
+    ul.style.width = '100vw';
+    ul.style.height = '100vh';
+    // !display 적용
+    // ul.style.rowGap = '1vh';
+    console.log(ul.style);
+
+    const li = document.getElementsByTagName('li');
+    console.log(li);
+
+    for(let i = 0; i<li.length; i++){
+      li[i].style.width = '20vh';
+      li[i].style.height = '20vh';
+      li[i].style.backgroundColor = '#c4c4c4';
+      li[i].style.listStyleType = 'none';
+      li[i].style.border = '1px solid #fff';
+    }
+    console.log(li[li.length-1].style);
+
+    if (window.matchMedia("(max-width: 600px)").matches) {
+      /* 뷰포트 너비가 400 픽셀 이상 */
+      // 컨텐츠를 두 줄로 나열
+      ul.style.display = 'grid';
+      ul.style.flexWrap = '1fr';
+    } else{
+      /* 뷰포트 너비가 400 픽셀 미만 */
+      // 컨텐츠를 한 줄로 나열
+      ul.style.display = 'grid';
+      ul.style.gridTemplateColumns = '1fr 1fr';
+      // ul.style.flexWrap = 'wrap';
+      console.log(ul.style);
+      console.log('600px이상입니다.');
+    }
+    // if(window.matchMedia('(min-width: 600px)').matches) {
+    //   ul.style.display = 'grid';
+    //   ul.style.gridTemplateColumns = '1fr 1fr';
+    //   console.log('600px이상입니다.');
+    // }
+
+    // ---------------------------------------------
+    // 미디어 쿼리처럼 매끄러운 작업이 아니라 저장을 하고 새로고침을 새로 해줘야만 화면 크기에 따른 실행이 제대로 된다
+  </script>
+</body>
+</html>

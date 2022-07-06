@@ -1,12 +1,17 @@
+#root #con #item-con1 > div:nth-child(3), #item-con2 > div:nth-child(2) {
+  -webkit-box-shadow: 0px 10px 10px rgba(65, 65, 65, 0.2);
+          box-shadow: 0px 10px 10px rgba(65, 65, 65, 0.2);
+}
+
 * {
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  scroll-behavior: smooth;
 }
 
 #root {
   width: 100vw;
-  height: 250vh;
 }
 
 #root #con {
@@ -125,6 +130,7 @@
   height: 100vh;
   display: -ms-grid;
   display: grid;
+  row-gap: 20vh;
 }
 
 #root #con #promotion-con .main-con {
@@ -147,68 +153,30 @@
 #root #con #promotion-con .main-con > div:nth-child(1) {
   position: absolute;
   z-index: 3;
-  background-color: unset;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(1) {
-  background-color: unset;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(1) svg {
-  background-color: unset;
-  position: relative;
-  left: -12vh;
-  top: 5vh;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(2) {
-  background-color: unset;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(2) svg {
-  background-color: unset;
-  position: relative;
-  left: 15vh;
-  top: -7vh;
 }
 
 #root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(3) {
-  background-color: unset;
-  display: none;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(3) svg {
-  background-color: unset;
-  position: relative;
-  left: 12vh;
-  top: -2vh;
-}
-
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(3) > div {
-  height: 4vh;
-  background-color: #414141;
-  position: relative;
-  left: 12vh;
-  top: -8vh;
-  border-radius: 50%;
-  -webkit-transform: rotate(-35deg);
-          transform: rotate(-35deg);
-  text-align: center;
+  border: 1px solid #000;
+  width: 30vh;
+  height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
-#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(3) > div > div {
-  background-color: unset;
-  color: #f2f2f2;
-  letter-spacing: 0.2vh;
+#root #con #promotion-con .main-con > div:nth-child(1) > div:nth-child(3) > .display-none {
+  position: relative;
+  width: 5vmax;
+  height: 5vmax;
+  bottom: 8vmax;
+  left: 1vmax;
+  background: transparent;
 }
 
 #root #con #promotion-con .main-con > div:nth-child(2) {
@@ -231,14 +199,14 @@
 #root #con #promotion-con .main-con > div:nth-child(2) > div:nth-child(1) {
   width: 30vh;
   height: 30vh;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 #root #con #promotion-con .main-con > div:nth-child(2) > div:nth-child(2) {
   width: 30vh;
   height: 22vh;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,6 +243,7 @@
 
 #item-con2 {
   width: 100vw;
+  border: 1px solid black;
   height: 20vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -313,7 +282,6 @@
 #item-con2 > div:nth-child(2) {
   width: 20vh;
   height: 10vh;
-  border: 1px solid #414141;
   border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -359,7 +327,7 @@
   font-weight: 600;
 }
 
-#item-con2 > div:nth-child(2) > div svg {
-  background-color: #E387A8;
+#item-con2 > div:nth-child(2) > div img {
+  background-color: transparent;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=1-main-page.css.map */

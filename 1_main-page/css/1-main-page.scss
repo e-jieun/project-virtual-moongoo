@@ -1,11 +1,16 @@
+%box-shadow{
+  box-shadow: 0px 10px 10px rgba(65,65,65,0.2);
+}
+
 *{
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
+  scroll-behavior: smooth;
 }
 #root{
   width: 100vw;
-  height: 250vh;
+  // height: 250vh;
   #con{
     width: inherit;
     height: inherit;
@@ -33,6 +38,7 @@
         border-radius: 50px;
         box-shadow: inset 1px 1px 10px rgba($color: #c4c4c4, $alpha: 0.8);
       }
+      // *input의 삼격형 스티커 부분
       &>div:nth-child(2)>div{
         width: 0vh;
         background-color: #fff;
@@ -54,6 +60,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @extend %box-shadow;
         &>div{
           width: 90%;
           height: 80%;
@@ -78,6 +85,7 @@
       width: 100vw;
       height: 100vh;
       display: grid;
+      row-gap: 20vh;
       // *
       .main-con{
         // border: 1px solid black;
@@ -87,62 +95,29 @@
         justify-content: center;
         background-color: none;
 
-        // 스티커 인터랙션 부분
+        // todo: 스티커 인터랙션 부분 img 태그로 수정하기
         &>div:nth-child(1){
           position: absolute;
           z-index: 3;
-          background-color: unset;
-
-          &>div:nth-child(1){
-            background-color: unset;
-            svg{
-            background-color: unset;
-            position: relative;
-            left: -12vh;
-            top: 5vh;
-            }
-          }
-          &>div:nth-child(2){
-            background-color: unset;
-            svg{
-            background-color: unset;
-            position: relative;
-            left: 15vh;
-            top: -7vh;
-            }
-          }
-          // 타원형 스티커 부분 con
+          // *타원형 스티커 부분 con
           &>div:nth-child(3){
-            background-color: unset;
-            display: none;
-          // 타원형 스티커 부분 item
-            svg{
-            background-color: unset;
-            position: relative;
-            left: 12vh;
-            top: -2vh;
-            }
-            &>div{
-              height: 4vh;
-              background-color:  #414141;
+            border: 1px solid #000;
+            width: 30vh;
+            height: 30vh;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            &>.display-none{
               position: relative;
-              left: 12vh;
-              top: -8vh;
-              border-radius: 50%;
-              transform: rotate(-35deg);
-              text-align: center;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              // display: none;
-              &>div{
-                background-color: unset;
-                color: #f2f2f2;
-                letter-spacing: 0.2vh;
-              }
+              width: 5vmax;
+              height: 5vmax;
+              bottom: 8vmax;
+              left: 1vmax;
+              background: transparent;
             }
           }
         }
+        // *스티커가 보이는 클릭 이벤트 핸들러 붙여줄 부분 
         &>div:nth-child(2){
           display: flex;
           flex-direction: column;
@@ -152,14 +127,14 @@
           &>div:nth-child(1){
             width: 30vh;
             height: 30vh;
-            background-color: #fff;
+            background-color: transparent;
           } 
           // 이름표 모양 con
           &>div:nth-child(2){
             width: 30vh;
             height: 22vh;
             position: absolute;
-            z-index: 2;
+            z-index: 3;
             display: flex;
             flex-direction: column;
             background-color: unset;
@@ -188,9 +163,9 @@
   }
 }
 #item-con2{
-  // 스크롤이 빈 공간으로 보였음
+
   width: 100vw;
-  // border: 1px solid black;
+  border: 1px solid black;
   height: 20vh;
   display: flex;
   align-items: center;
@@ -218,12 +193,11 @@
   &>div:nth-child(2){
     width: 20vh;
     height: 10vh;
-    border: 1px solid #414141;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    // display: none;
+    @extend %box-shadow;
   // 더 많은 소식이 기다리고 있어요! item
     &>div{
       width: 90%;
@@ -245,8 +219,8 @@
           font-weight: 600;
         }
       }
-      svg{
-        background-color: #E387A8;
+      img{
+        background-color: transparent;
       }
     }
   }
